@@ -56,7 +56,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-md-offset-2 centered">
-          <img src="{% static 'portfolio/dahiya.jpg' %}" width="300" height="200" alt="Rajni Dahiya">
+          <img src="{% static 'portfolio/dahiya.jpg' %}" width="400" height="250" alt="Rajni Dahiya">
           <h1>About Rajni Dahiya!</h1>
           <p>Hello everybody. I'm Rajni Dahiya, Rajni Dahiya, Currently Pursuing Masters in Economics From Delhi School Of Economics.</p>
 
@@ -83,11 +83,11 @@
 
             {% if project.url %}
             <a href="{{ project.url }}">
-              <img src="{{ project.image.url }}" class="img-fluid mb-2">
+              <img src="{{ project.image.url }}" width="400" height="300" class="img-fluid mb-2">
             </a>
             {% else %}
 
-            <img src="{{ project.image.url }}" class="img-fluid mb-2">
+            <img src="{{ project.image.url }}" width="400" height="300" class="img-fluid mb-2">
             {% endif %}
             <h3>{{ project.title }}</h3>
             <p>{{ project.description }}</p>
