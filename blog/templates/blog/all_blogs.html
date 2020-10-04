@@ -57,8 +57,8 @@
 	    <div class="container">
 			<div class="row">
 
-        <h3 class="row justify-content-center my-3">Rajni Dahiya has written {{ blogs.count }} blog{{ blogs.count|pluralize }}</h3>
-
+        <h3 class="text-center mb-5">Rajni Dahiya has written {{ blogs.count }} blog{{ blogs.count|pluralize }}</h3>
+        <hr>
         {% for blog in blogs %}
         <div class="row justify-content-center my-3">
           <div class="col-md-10">
@@ -66,7 +66,7 @@
               <h2>{{ blog.title }}</h2>
             </a>
             <h5 class="text-muted">{{ blog.date|date:'M d Y'|upper }}</h5>
-            <h4>{{ blog.description|striptags|truncatechars:100 }}</h4>
+            <h4>{{ blog.description }}</h4>
           </div>
         </div>
         {% endfor %}
@@ -91,7 +91,7 @@
 
             <a href="https://www.quantopian.com/users/5f51d8c922590f00171eeba2" target="_blank"><b>Quantopian</b></a>
             <br>
-            
+
             <a href="https://drive.google.com/drive/folders/1OFNnrHRZPZ3unWdErjLHod8Ibv2FfG1d" target="_blank"><b>Machine Learning</b></a>
           </p>
         </div><!-- /col-lg-4 -->
