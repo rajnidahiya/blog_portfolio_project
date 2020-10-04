@@ -1,24 +1,105 @@
 
-{% extends "portfolio/base.html" %}
-
 {% load static %}
+<!doctype html>
 
-{% block content %}
 
-<h1 id="blogtitle" class="font-weight-bold text-center">Blog</h1>
+<html lang="en">
+  <head>
+    meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="{% static "portfolio/R.jpg"  %}">
 
-<h3 class="text-center mb-5">Rajni Dahiya has written {{ blogs.count }} blog{{ blogs.count|pluralize }}</h3>
+    <title>Rajni Dahiya</title>
 
-{% for blog in blogs %}
-<div class="row justify-content-center my-3">
-  <div class="col-md-10">
-    <a href="{% url 'blog:detail' blog.id %}">
-      <h2>{{ blog.title }}</h2>
-    </a>
-    <h5 class="text-muted">{{ blog.date|date:'M d Y'|upper }}</h5>
-    <h4>{{ blog.description|striptags|truncatechars:100 }}</h4>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static "css/bootstrap.css"  %}" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="{% static "css/main.css"  %}" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="home.html">Rajni Dahiya</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="{% url 'blog:all_blogs' %}">Blog</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	<!-- +++++ Posts Lists +++++ -->
+	<!-- +++++ First Post +++++ -->
+
+	<!-- +++++ Third Post +++++ -->
+	<div id="grey">
+	    <div class="container">
+			<div class="row">
+
+        <h3 class="text-center mb-5">Rajni Dahiya has written {{ blogs.count }} blog{{ blogs.count|pluralize }}</h3>
+
+        {% for blog in blogs %}
+        <div class="row justify-content-center my-3">
+          <div class="col-md-10">
+            <a href="{% url 'blog:detail' blog.id %}">
+              <h2>{{ blog.title }}</h2>
+            </a>
+            <p><img src="{% static "portfolio/dahiya.jpg"  %}" width="50px" height="50px"> <ba>Rajni Dahiya</ba></p>
+            <h5 class="text-muted">{{ blog.date|date:'M d Y'|upper }}</h5>
+            <h4>{{ blog.description|striptags|truncatechars:100 }}</h4>
+          </div>
+        </div>
+        {% endfor %}
+			</div><!-- /row -->
+	    </div> <!-- /container -->
+	</div><!-- /grey -->
+
+
+
+  <!-- +++++ Footer Section +++++ -->
+
+  <div id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <h4>My Links</h4>
+          <p>
+            <a href="https://public.tableau.com/profile/rajni.dahiya#!/" target="_blank"><b>Tableau Public</b></a>
+            <a href="https://github.com/rajnidahiya" target="_blank"><b>Github</b></a>
+            <a href="https://www.quantopian.com/users/5f51d8c922590f00171eeba2" target="_blank"><b>Quantopian</b></a>
+            <a href="https://drive.google.com/drive/folders/1OFNnrHRZPZ3unWdErjLHod8Ibv2FfG1d" target="_blank"><b>Machine Learning</b></a>
+          </p>
+        </div><!-- /col-lg-4 -->
+      </div>
+    </div>
   </div>
-</div>
-{% endfor %}
 
-{% endblock %}
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static "js/bootstrap.min.js"  %}"></script>
+  </body>
+ </html>

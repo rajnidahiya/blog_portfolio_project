@@ -1,40 +1,120 @@
-{% extends "portfolio/base.html" %}
-
 {% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="{% static "portfolio/R.jpg"  %}">
 
-{% block content %}
+    <title>Rajni Dahiya</title>
 
-<div class="row justify-content-center my-3">
-  <div class="col-5">
-    <img src="{% static 'portfolio/dahiya.jpg' %}" class="img-fluid">
-  </div>
-</div>
 
-<div class="row justify-content-center mb-3">
-  <div class="col-md-9 text-center">
-    <h1 id="hometext" class="Helvetica">Rajni Dahiya, Pursuing Master's in Economics From Delhi School Of Economics</h1>
-  </div>
-</div>
+    <!-- Bootstrap core CSS -->
+    <link href="{% static "css/bootstrap.css"  %}" rel="stylesheet">
 
-<h2 class="mt-5">Portfolio(Click On The Images):</h2>
-<hr>
-<div class="row">
-  {% for project in projects %}
-  <div class="col-lg-4 col-md-6">
 
-    {% if project.url %}
-    <a href="{{ project.url }}">
-      <img src="{{ project.image.url }}" class="img-fluid mb-2">
-    </a>
-    {% else %}
+    <!-- Custom styles for this template -->
+    <link href="{% static "css/main.css"  %}" rel="stylesheet">
 
-    <img src="{{ project.image.url }}" class="img-fluid mb-2">
-    {% endif %}
-    <h3>{{ project.title }}</h3>
-    <p>{{ project.description }}</p>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="{% static "js/hover.zoom.js"  %}"></script>
+    <script src="{% static "js/hover.zoom.conf.js"  %}"></script>
 
-  </div>
-  {% endfor %}
-</div>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
 
-{% endblock %}
+  <body>
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="home.html">Rajni Dahiya</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="{% url 'blog:all_blogs' %}">Blog</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+	<!-- +++++ Welcome Section +++++ -->
+  <div id="ww">
+	    <div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 centered">
+					<img src="{% static "portfolio/dahiya.jpg"  %}" alt="Rajni Dahiya">
+					<h1>About Rajni Dahiya!</h1>
+					<p>Hello everybody. I'm Rajni Dahiya,Currently, Pursuing Master's in Economics From Delhi School Of Economics and completed my Graduation in Economics from Lady Shri Ram College, University of Delhi</p>
+				</div><!-- /col-lg-8 -->
+			</div><!-- /row -->
+	    </div> <!-- /container -->
+	</div><!-- /ww -->
+
+
+	<!-- +++++ Projects Section +++++ -->
+
+	<div class="container pt">
+		<div class="row mt centered">
+			<div class="col-lg-4">
+        <div class="row">
+          {% for project in projects %}
+          <div class="col-lg-4 col-md-6">
+
+            {% if project.url %}
+            <a href="{{ project.url }}">
+              <img src="{{ project.image.url }}" class="img-fluid mb-2">
+            </a>
+            {% else %}
+
+            <img src="{{ project.image.url }}" class="img-fluid mb-2">
+            {% endif %}
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.description }}</p>
+
+          </div>
+          {% endfor %}
+        </div>
+			</div>
+		</div><!-- /row -->
+	</div><!-- /container -->
+
+
+	<!-- +++++ Footer Section +++++ -->
+
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<h4>My Links</h4>
+					<p>
+            <a href="https://public.tableau.com/profile/rajni.dahiya#!/" target="_blank"><b>Tableau Public</b></a>
+            <a href="https://github.com/rajnidahiya" target="_blank"><b>Github</b></a>
+            <a href="https://www.quantopian.com/users/5f51d8c922590f00171eeba2" target="_blank"><b>Finance</b></a>
+            <a href="https://drive.google.com/drive/folders/1OFNnrHRZPZ3unWdErjLHod8Ibv2FfG1d" target="_blank"><b>Machine Learning</b></a>
+					</p>
+				</div><!-- /col-lg-4 -->
+			</div>
+		</div>
+	</div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static "js/bootstrap.min.js"  %}"></script>
+  </body>
+</html>
