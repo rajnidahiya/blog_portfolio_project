@@ -61,6 +61,9 @@
         <hr>
         <br>
         <br>
+        <br>
+        <br>
+
         {% for blog in blogs %}
         <div class="row justify-content-center my-3">
           <div class="col-md-10">
@@ -68,8 +71,14 @@
               <h2>{{ blog.title }}</h2>
             </a>
             <br>
+            <p><img src="{% static "portfolio/dahiya.jpg"  %}" width="30px" height="30px"> <ba>Rajni Dahiya</ba></p>
+
             <h5 class="text-muted">{{ blog.date|date:'M d Y'|upper }}</h5>
+            
             <h4>{{ blog.description }}</h4>
+            <br>
+            <br>
+            <br>
             <br>
             <br>
             <br>
