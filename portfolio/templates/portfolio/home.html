@@ -44,15 +44,15 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="{% url 'blog:all_blogs' %}">Blog</a></li>
+            <li><a href="{% url 'blog:all_blogs' %}"><b>Blog</b></a></li>
             <li class="nav-item">
-              <a class="nav-link" href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-878caa87-af4c-47ea-8e77-203c54235eb2.pdf" target="_blank"><b>Machine Learning with R Course Certificate</b></a>
+              <a class="nav-link" href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-878caa87-af4c-47ea-8e77-203c54235eb2.pdf" target="_blank"><b>Machine Learning Certificate</b></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-d6810e72-a403-4f6f-a606-97ae7b1afe1d.pdf" target="_blank"><b>Credit Risk Modeling Course Certificate</b></a>
+              <a class="nav-link" href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-d6810e72-a403-4f6f-a606-97ae7b1afe1d.pdf" target="_blank"><b>Credit Risk Modeling Certificate</b></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-8c49c2a1-8a64-4021-9b90-95bd870f541d.pdf" target="_blank"><b>Tableau Course Certificate</b></a>
+              <a class="nav-link" href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-8c49c2a1-8a64-4021-9b90-95bd870f541d.pdf" target="_blank"><b>Tableau Certificate</b></a>
             </li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -65,7 +65,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 centered">
-          <img src="{% static 'portfolio/dahiya.jpg' %}" width="300" height="100" alt="Rajni Dahiya">
+          <img src="{% static 'portfolio/dahiya.jpg' %}" width="400" height="200" alt="Rajni Dahiya">
           <h1>About Rajni Dahiya!</h1>
           <p>Hello everybody! I'm Rajni Dahiya,<br> Currently Pursuing Masters in Economics from Delhi School Of Economics.<br> I did my Graduation in Economics(Hons) from Lady Shri Ram College, University of Delhi.<br>I love Skating, Dancing and Laughing (SDL)!</p>
 
@@ -94,11 +94,11 @@
 
             {% if project.url %}
             <a href="{{ project.url }}">
-              <img src="{{ project.image.url }}" width="300" height="150" class="img-fluid mb-2">
+              <img src="{{ project.image.url }}" width="350" height="175" class="img-fluid mb-2">
             </a>
             {% else %}
 
-            <img src="{{ project.image.url }}" width="300" height="150" class="img-fluid mb-2">
+            <img src="{{ project.image.url }}" width="350" height="175" class="img-fluid mb-2">
             {% endif %}
             <h3>{{ project.title }}</h3>
             <p>{{ project.description }}</p>
